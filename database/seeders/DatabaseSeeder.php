@@ -15,17 +15,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         \App\Models\User::factory(10)->create();
-        Todo::create([
-            'title' => 'Clean room',
-            'description' => 'Sweep and mop room',
-            'priority' => 'high'
-        ]);
-
-        Todo::create([
-            'title' => 'Clean living room',
-            'description' => 'Sweep and mop living room',
-            'priority' => 'mediuem'
-        ]);
+        Todo::factory(5)->create();
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',

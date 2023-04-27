@@ -1,2 +1,3 @@
-<h2>{{$todo['title']}}</h2>
-<p>{{$todo['description']}}</p>
+<h1>{{$todo->title}}</h1>
+<p>{{$todo->description}}</p>
+<p>Priority: {{$todo->priority}}</p>
