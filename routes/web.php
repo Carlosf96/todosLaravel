@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Todo;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,21 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('Todos', [
         'heading' => 'Todos pending',
-        'todos' => [
-            [
-                'id' => 1,
-                'title' => 'Clean room',
-                'description' => 'make bed, sweep room, mop room',
-            ],
-            [
-                'id' => 2,
-                'title' => 'Clean living room',
-                'description' => 'sweep living room, mop living room',
-            ]
-        ]
+        'todos' => Todo::all() 
     ]);
 });
 
-Route::get('/hello', function () {
-    return response('hello');
+Route::get('/todos/{id}', function ($id) {
+    return view('todo', [
+        'todo' => Todo::findOne($id)
+    ]);
 });
