@@ -14,7 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Todos');
+    return view('Todos', [
+        'heading' => 'Todos pending',
+        'todos' => [
+            [
+                'id' => 1,
+                'title' => 'Clean room',
+                'description' => 'make bed, sweep room, mop room',
+            ],
+            [
+                'id' => 2,
+                'title' => 'Clean living room',
+                'description' => 'sweep living room, mop living room',
+            ]
+        ]
+    ]);
 });
 
 Route::get('/hello', function () {
