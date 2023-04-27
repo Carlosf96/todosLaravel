@@ -23,6 +23,6 @@ Route::get('/', function () {
 
 Route::get('/todos/{id}', function ($id) {
     return view('todo', [
-        'todo' => Todo::findOne($id)
+        'todo' => Todo::find($id)
     ]);
 });
