@@ -21,8 +21,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/todos/{id}', function ($id) {
+Route::get('/todos/{todo}', function (Todo $todo) {
     return view('todo', [
-        'todo' => Todo::find($id)
+        'todo' => $todo
     ]);
 });
